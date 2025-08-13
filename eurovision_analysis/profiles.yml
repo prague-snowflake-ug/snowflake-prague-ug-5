@@ -1,0 +1,19 @@
+eurovision_analysis:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: SYSADMIN
+      warehouse: COMPUTE_WH
+      database: DEV
+      schema: PUBLIC
+      account: ''
+      user: ''
+    prod:
+      type: snowflake
+      role: SYSADMIN
+      warehouse: COMPUTE_WH
+      database: PROD
+      schema: PUBLIC
+      account: ''
+      user: ''

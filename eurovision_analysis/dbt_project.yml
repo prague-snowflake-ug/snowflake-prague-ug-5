@@ -1,0 +1,19 @@
+name: eurovision_analysis
+version: 1.0.0
+config-version: 2
+profile: eurovision_analysis
+model-paths:
+  - models
+analysis-paths:
+  - analyses
+test-paths:
+  - tests
+seed-paths:
+  - seeds
+macro-paths:
+  - macros
+snapshot-paths:
+  - snapshots
+models:
+  eurovision_analysis:
+    +materialized: view
