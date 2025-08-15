@@ -7,13 +7,13 @@ eurovision_analysis:
       warehouse: COMPUTE_WH
       database: DEV
       schema: PUBLIC
-      account: ''
-      user: ''
+      account: 'not needed'
+      user: 'not needed'
     prod:
       type: snowflake
       role: SYSADMIN
       warehouse: COMPUTE_WH
       database: PROD
       schema: PUBLIC
-      account: ''
-      user: ''
+      account: 'not needed'
+      user: 'not needed'

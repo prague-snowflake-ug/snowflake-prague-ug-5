@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: eurovision
+    database: SOURCES
+    schema: RAW
+    tables:
+      - name: BOOKMAKERS
+      - name: CONTESTANTS
+      - name: COUNTRIES
+      - name: JURORS
+      - name: VOTES

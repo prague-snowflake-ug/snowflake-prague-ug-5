@@ -16,4 +16,7 @@ snapshot-paths:
   - snapshots
 models:
   eurovision_analysis:
-    +materialized: view
+    01_staging:
+      +materialized: table
+    01_marts:
+      +materialized: view    

@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: stg_eurovision__countries
+    columns:
+      - name: country_id
+        tests: [not_null, unique]
+      - name: region
+        tests: [not_null]
+
+  - name: stg_eurovision__contestants
+    columns:
+      - name: year
+        tests: [not_null]
+      - name: country_id
+        tests: [not_null]
+      - name: final_total_points
+      - name: semifinal_total_points
+
+  - name: stg_eurovision__votes
+    columns:
+      - name: year
+        tests: [not_null]
+      - name: from_country_id
+        tests: [not_null]
+      - name: to_country_id
+        tests: [not_null]
+      - name: round
+        tests:
+          - accepted_values:
+              values: ['final','semi-final','semi-final-1','semi-final-2']
+
+  - name: stg_eurovision__bookmakers
+    columns:
+      - name: year
+        tests: [not_null]
+      - name: country_id
+        tests: [not_null]
+      - name: bookmaker
+        tests: [not_null]
+
+  - name: stg_eurovision__jurors
+    columns:
+      - name: year
+        tests: [not_null]
+      - name: juror_letter
+        tests:
+          - accepted_values: {values: ['A','B','C','D','E']}
