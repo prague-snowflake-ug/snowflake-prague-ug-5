@@ -18,5 +18,5 @@ models:
   eurovision_analysis:
     01_staging:
       +materialized: table
-    01_marts:
-      +materialized: view    
+    02_marts:
+      +materialized: table    
