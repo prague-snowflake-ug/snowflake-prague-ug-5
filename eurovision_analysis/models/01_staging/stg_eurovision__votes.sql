@@ -1,3 +1,8 @@
+/* 
+Grain: 1 row per (year, round, from_country_id → to_country_id)
+Purpose: Standardize vote records for downstream affinity/bias analysis.
+*/
+
 with src as (
   select * from {{ source('eurovision','VOTES') }}
 ),

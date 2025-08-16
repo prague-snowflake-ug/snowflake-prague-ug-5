@@ -1,3 +1,10 @@
+/* 
+Grain: 1 row per (year, round, from_country_id → to_country_id, juror_letter)
+Purpose: Unpivot juror A..E columns into tidy rows for micro jury analyses.
+Derivations: juror_letter, juror_rank (int)
+*/
+
+
 with src as (
   select * from {{ source('eurovision','JURORS') }}
 ),

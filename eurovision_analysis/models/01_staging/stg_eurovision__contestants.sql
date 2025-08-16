@@ -1,3 +1,12 @@
+/* 
+Grain: 1 row per (year, country)
+Purpose: Type, clean, and enrich contestant/entry attributes (semifinal/final points, running orders).
+Key Derivations: 
+  - qualified_to_final (boolean)
+  - jury_minus_televote_final = final_jury_points - final_televoting_points
+*/
+
+
 with src as (
   select * from {{ source('eurovision','CONTESTANTS') }}
 )

@@ -1,3 +1,8 @@
+/* 
+Grain: 1 row per country
+Purpose: Normalize country identifiers for consistent joins and human-friendly output.
+*/
+
 with src as (
   select * from {{ source('eurovision','COUNTRIES') }}
 )

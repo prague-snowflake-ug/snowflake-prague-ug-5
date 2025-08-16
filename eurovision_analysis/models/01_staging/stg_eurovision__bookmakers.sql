@@ -1,3 +1,10 @@
+/* 
+Grain: 1 row per (year, round, country_id, bookmaker)
+Purpose: Standardize bookmaker odds and compute implied probabilities.
+Derivations: odds_decimal, implied_prob = 1 / odds_decimal (filtered to > 0)
+*/
+
+
 with src as (
   select * from {{ source('eurovision','BOOKMAKERS') }}
 ),
