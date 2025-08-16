@@ -1,3 +1,13 @@
+/* 
+Grain: 1 row per (year, country)
+Purpose: Compare pre-final bookmaker probabilities to actual outcomes; quantify calibration/upsets.
+Method:
+  - Normalize per-year probabilities to sum ≈ 1
+  - Compute implied_rank (by probability) vs final_rank; include rank_diff and winner_prob_error
+Use Cases: Identify “upsets”, craft year-by-year narratives.
+*/
+
+
 -- Compare bookmaker implied probabilities (final) vs. actual outcomes
 with odds as (
   select * from {{ ref('stg_eurovision__bookmakers') }}

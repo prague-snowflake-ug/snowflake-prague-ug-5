@@ -1,3 +1,11 @@
+/* 
+Grain: 1 row per (year, country/entry)
+Purpose: Curated results table for dashboards and storytelling; adds ranks and regions.
+Derivations: 
+  - final_rank, semifinal_rank (window DENSE_RANK by year)
+  - jury_minus_televote_final
+*/
+
 with c as (select * from {{ ref('stg_eurovision__contestants') }}),
 k as (select * from {{ ref('stg_eurovision__countries') }}),
 joined as (

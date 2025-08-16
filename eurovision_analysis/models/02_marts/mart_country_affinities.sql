@@ -1,3 +1,14 @@
+/* 
+Grain: 1 row per (from_country_id → to_country_id), aggregated across years
+Purpose: “Friendship index” between countries via z-score of points given vs recipient’s yearly baseline.
+Method:
+  1) For each (year, to_country), compute baseline: avg_to_b, sd_to_b over points received.
+  2) For each pair (A→B, year), compute z = (A→B points - avg_to_b) / sd_to_b.
+  3) Aggregate across years (avg z), require a minimum #years (e.g., ≥ 3).
+Outputs: affinity_z_avg, years_observed + readable names/regions.
+Notes: Positive = A tends to give B more than B’s yearly norm; negative = less than norm.
+*/
+
 with v as (
   select *
   from {{ ref('stg_eurovision__votes') }}
