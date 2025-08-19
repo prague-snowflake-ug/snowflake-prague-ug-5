@@ -18,6 +18,7 @@ select
   composers,
   lyricists,
   nullif(lyrics, '')                            as lyrics,
+  --SNOWFLAKE.CORTEX.TRANSLATE(lyrics, '', 'en') as lyrics_english,
   youtube_url,
   try_to_number(semifinal_number)             as semifinal_number,
   try_to_number(semifinal_running_order)      as semifinal_running_order,
