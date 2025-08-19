@@ -18,5 +18,7 @@ models:
   eurovision_analysis:
     01_staging:
       +materialized: table
+      +schema: staging
     02_marts:
-      +materialized: table    
+      +materialized: table
+      +schema: marts
