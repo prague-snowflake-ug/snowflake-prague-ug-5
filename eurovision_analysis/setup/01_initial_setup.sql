@@ -20,3 +20,4 @@ CREATE OR REPLACE API INTEGRATION git_api_integration_ug5
 
 GRANT USAGE ON SECRET admin.general.git_api_integration_ug5 TO ROLE sysadmin;
 GRANT USAGE ON INTEGRATION git_api_integration_ug5 TO ROLE sysadmin;
+GRANT USAGE ON WAREHOUSE COMPUTE_WH TO ROLE public;
