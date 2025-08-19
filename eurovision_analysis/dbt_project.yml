@@ -22,3 +22,6 @@ models:
     02_marts:
       +materialized: table
       +schema: marts
+    03_reporting:
+      +materialized: view
+      +schema: reporting
