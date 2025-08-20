@@ -35,8 +35,12 @@ joined as (
 ranked as (
   select
     j.*,
-    dense_rank() over (partition by year order by final_total_points desc nulls last) as final_rank,
-    dense_rank() over (partition by year order by semifinal_total_points desc nulls last) as semifinal_rank
+    case when final_total_points is not null then 
+      rank() over (partition by year order by final_total_points desc nulls last)
+    end as final_rank,
+    case when semifinal_total_points is not null then
+      rank() over (partition by year order by semifinal_total_points desc nulls last)
+    end as semifinal_rank
   from joined j
 )
 select * from ranked
