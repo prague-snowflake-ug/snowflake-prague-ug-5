@@ -44,3 +44,4 @@ ranked as (
   from joined j
 )
 select * from ranked
+
